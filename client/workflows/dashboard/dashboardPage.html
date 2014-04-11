@@ -1,0 +1,94 @@
+<template name="dashboardPage">
+  <div id="dashboardPage" class="page">
+    <div class="hidden">{{resized}}</div>
+    <div class="content">
+
+      <div id="pad-wrapper">
+
+        <div class="row">
+          <div class="col-md-6">
+            <h2>
+                {{ name }}
+              </h2>
+            <h4>
+                <span id="totalInteractions">Total Interactions: {{ getTotalInteractions }}</span>
+              </h4>
+          </div>
+          <div class="col-md-6">
+            {{#if isAdmin}}
+            <div class="pull-right">
+              <div class="btn-group">
+                <button id="editCampaignButton" class="btn btn-success">Edit Campaign</button>
+                <a id="exportCsvDataButton" class="btn btn-warning" href="{{getCsvFile}}">Export CSV</a>
+                <button id="deleteCampaignButton" class="medium btn btn-danger">Delete</button>
+              </div>
+              <div>
+                <h4>
+                    {{ getStartDate }} / {{ getEndDate }}
+                  </h4>
+              </div>
+            </div>
+            {{else}}
+            <div class="pull-right">
+              <div class="btn-group">
+                <a id="exportCsvDataButton" class="btn btn-warning" href="{{getCsvFile}}">Export CSV</a>
+                <button id="editCampaignButton" class="medium btn btn-info pull-right">Edit</button>
+              </div>
+            </div>
+            {{/if}}
+          </div>
+        </div>
+        <div class="row">
+          <hr>
+
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Total Interactions By Day</h4>
+            </div>
+            <div class="col-md-12">
+              <div id="dailyInteractionsLineChartPanel" class="panel panel-default">
+                {{#constant}}
+                <div class="d3chart" id="dailyInteractionsLineChart">
+                  <img id="noLineChartDataMessage" class="{{isLineChartNoDataVisible}}" src="/img/graphs_line_gray.png" alt="" />
+                  <svg id="dailyInteractionsLineChartCanvas"></svg>
+                </div>
+                {{/constant}}
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-6">
+              <h4>
+                Total Interactions by Operating System</h4>
+              <div id="pieChartPanel" class="panel panel-default">
+                {{#constant}}
+                <div class="d3chart" id="pieChart">
+                  <img id="noPieChartDataMessage" class="{{isPieChartNoDataVisible}}" src="/img/graphs_donut_gray.png" alt="" />
+                  <svg id="pieChartPageCanvas"></svg>
+                </div>
+                {{/constant}}
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <h4>Total Interactions By Hour</h4>
+              <div id="hourlyInteractionsBarChartPanel" class="panel panel-default">
+                {{#constant}}
+                <div class="d3chart" id="hourlyInteractionsBarChart">
+                  <img id="noBarChartDataMessage" class="{{isBarChartNoDataVisible}}" src="/img/graphs_bar_gray.png" alt="" />
+                  <svg id="hourlyInteractionsBarChartCanvas"></svg>
+                </div>
+                {{/constant}}
+              </div>
+            </div>
+
+          </div>
+          <hr>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
