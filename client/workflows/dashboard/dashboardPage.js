@@ -7,35 +7,18 @@ Session.setDefault('selected_campaign_record', false);
 
 Router.map(function(){
   this.route('dashboardPageRoute', {
-    path: '/dashboard/:id',
+    path: '/',
     template: 'dashboardPage',
-    yieldTemplates: areYieldsVisible(),
-    onBeforeAction: function(){
-      checkUserSignedIn(this);
-      checkUserHasEmployer(this);
-    },
     waitOn: function(){
-      Meteor.subscribe('settings');
-      Meteor.subscribe ('interactionsDaily', this.params.id);
-
-      if(Meteor.user()){
-        if(Meteor.user().profile.role == "Admin"){
-          return Meteor.subscribe ('adminCampaigns');
-        }else{
-          return Meteor.subscribe ('employerCampaigns', Meteor.user().profile.employer_id);
-        }
-      }
-
+      Meteor.subscribe ('interactionsDaily');
     },
-    data: function () {
-      console.log('campaignsRecordRoute: ' + this.params.id);
-      return Campaigns.findOne({_id: new Meteor.Collection.ObjectID(this.params.id)});
-    },
+    // data: function () {
+    //   //return Campaigns.findOne({_id: new Meteor.Collection.ObjectID(this.params.id)});
+    //   return DailyStats.find();
+    // },
     onAfterAction: function() {
-      Session.set('isOnListPage', false);
-      setPageTitle("Campaign");
-      renderEngagementsPieChartData();
-      renderHourlyInteractionsBarGraph();
+      //renderEngagementsPieChartData();
+      //renderHourlyInteractionsBarGraph();
       renderDailyInteractionsLineChart();
     }
   });
@@ -44,7 +27,7 @@ Router.map(function(){
 //------------------------------------------------
 // HELPERS
 
-Template.campaignsRecordPage.helpers({
+Template.dashboardPage.helpers({
   campaignRecord: function(){
     if (Session.get('selected_campaign_record')) {
       return Campaigns.findOne(Session.get('selected_campaign_record'));
@@ -126,19 +109,11 @@ Template.campaignsRecordPage.helpers({
     }
   },
   resized: function() {
-    renderHourlyInteractionsBarGraph();
     renderDailyInteractionsLineChart();
-    renderEngagementsPieChartData();
-
     return Session.get('resize');
   },
   destroyed: function() {
     this.handle && this.handle.stop();
-    $('#pieChart').html('<svg id="pieChartPageCanvas"></svg>');
-    $('#hourlyInteractionsBarChart').html('<svg id="hourlyInteractionsBarChartCanvas"></svg>');
     $('#dailyInteractionsLineChart').html('<svg id="dailyInteractionsLineChartCanvas"></svg>');
   }
 });
-
-
-

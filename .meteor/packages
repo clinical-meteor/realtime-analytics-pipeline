@@ -4,9 +4,10 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-autopublish
 insecure
 less
 bootstrap-3
 browser-policy
 moment
+iron-router
+d3

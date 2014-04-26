@@ -1,75 +1,24 @@
 renderDailyInteractionsLineChart = function(){
   console.log('renderDailyInteractionsLineChart');
 
-  var nullrecord = [
-    {x:0, y:0}
-  ];
+  // var nullrecord = [
+  //   {x:0, y:0}
+  // ];
 
-  if(Meteor.user()){
-    var campaignRecord = Campaigns.findOne({_id: Meteor.user().profile.selected_campaign_id });
-    console.log('campaignRecord: ' + campaignRecord);
+  //if(Meteor.user()){
+    //var campaignRecord = Campaigns.findOne({_id: Meteor.user().profile.selected_campaign_id });
+    //console.log('campaignRecord: ' + campaignRecord);
 
-    var totalData = InteractionsDaily.find({},{sort:{dateIncrement: -1}}).fetch();
-    var firefoxData = InteractionsDaily.find({},{sort:{dateIncrement: -1}}).fetch();
-    var safariData = InteractionsDaily.find({},{sort:{dateIncrement: -1}}).fetch();
-    var chromeData = InteractionsDaily.find({},{sort:{dateIncrement: -1}}).fetch();
-    var blackberryData = InteractionsDaily.find({},{sort:{dateIncrement: -1}}).fetch();
-    var msieData = InteractionsDaily.find({},{sort:{dateIncrement: -1}}).fetch();
-    var otherData = InteractionsDaily.find({},{sort:{dateIncrement: -1}}).fetch();
+    //var totalData = DailyStats.find({},{sort:{dateIncrement: 'asc'}}).fetch();
+    //var totalData = DailyStats.find({},{sort: {dateIncrement: -1}}).fetch();
+    //var firefoxData = DailyStats.find({},{sort:{dateIncrement: -1}}).fetch();
+    //var safariData = DailyStats.find({},{sort:{dateIncrement: -1}}).fetch();
 
-    firefoxData.map(function(doc, i){
-      doc.daily_total = doc.firefox_total;
-    });
-    safariData.map(function(doc, i){
-      doc.daily_total = doc.safari_total;
-    });
-    chromeData.map(function(doc, i){
-      doc.daily_total = doc.chrome_total;
-    });
-    blackberryData.map(function(doc, i){
-      doc.daily_total = doc.blackberry_total;
-    });
-    msieData.map(function(doc, i){
-      doc.daily_total = doc.msie_total;
-    });
-    otherData.map(function(doc, i){
-      doc.daily_total = doc.other_total;
-    });
 
     var data = [{
       color: "#45b76f",
       key: "Total",
-      values: totalData
-    },
-    {
-      color: "#a7a2af",
-      key: "Safari",
-      values: safariData
-    },
-    {
-      color: "#616387",
-      key: "Firefox",
-      values: firefoxData
-    },
-    {
-      color: "#7e7fae",
-      key: "Chrome",
-      values: chromeData
-    },
-    {
-      color: "#969ac8",
-      key: "Blackberry",
-      values: blackberryData
-    },
-    {
-      color: "#abbbce",
-      key: "Internet Explorer",
-      values: msieData
-    },
-    {
-      color: "#aec7e8",
-      key: "Other",
-      values: otherData
+      values: DailyStats.find().fetch()
     }
     ];
 
@@ -112,7 +61,7 @@ renderDailyInteractionsLineChart = function(){
 
         nv.utils.windowResize(chart.update);
 
-        chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
+        //chart.dispatch.on('stateChange', function(e) { nv.log('New State:', JSON.stringify(e)); });
 
         return chart;
       },
@@ -144,5 +93,5 @@ renderDailyInteractionsLineChart = function(){
         };
       }
     });
-  }
+  //}
 };
