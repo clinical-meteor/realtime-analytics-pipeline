@@ -4,8 +4,11 @@
     <div class="container">
 
       <div id="pad-wrapper">
-        <div class="row">
 
+        <h2>Realtime Analytics Pipeline</h2>
+        <hr>
+
+        <div class="row">
             <div class="col-md-12">
               <div id="dailyInteractionsLineChartPanel" class="panel panel-default">
                 <div class="d3chart" id="dailyInteractionsLineChart">
@@ -13,8 +16,24 @@
                 </div>
               </div>
             </div>
-
         </div>
+        <hr>
+        <div class="col col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Data Input
+            </div>
+            <div class="panel-body">
+              <input id="dateInput" type="text" class="form-control" placeholder="enter date..." value="{{getMostRecentDate}}">
+              <input id="valueInput" type="text" class="form-control" placeholder="enter value...">
+              <div id="dataSubmitButton" class="fullwidth btn btn-default">
+                Enter
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
 
     </div>
