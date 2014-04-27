@@ -5,9 +5,6 @@
 
       <div id="pad-wrapper">
 
-        <h2>Realtime Analytics Pipeline</h2>
-        <hr>
-
         <div class="row">
             <div class="col-md-12">
               <div id="dailyInteractionsLineChartPanel" class="panel panel-default">
@@ -29,6 +26,24 @@
               <div id="dataSubmitButton" class="fullwidth btn btn-default">
                 Enter
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Info
+            </div>
+            <div class="panel-body">
+              <p>
+                This isn't just any graph.  It's a realtime, reactive, responsive graph!  Open up a second window.  Type some values into the data input box.  Watch both graphs update in realtime.
+              </p>
+              <p>
+                Behind the scenes, the Data Input box is connecting to the local client minimongo cursor, where it inputs some data.  The minimongo cursor synchronizes with the Mongo database instance.  When an update to the database occurs, Meteor contacts all the open clients and pushes the new data to the minimongo curors.  When the local minimongo cursor updates, the Blaze templates get redrawn.  And the D3 graphs get triggered to update their graphs.
+              </p>
+              <p>
+                The entire thing is pipelined, and any new data to the database will update the graphs.  
+              </p>
             </div>
           </div>
         </div>

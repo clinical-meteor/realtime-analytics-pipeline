@@ -41,6 +41,7 @@ renderDailyInteractionsLineChart = function(){
         chart = nv.models.lineChart()
           .x(function(d) { return moment(d.date); })
           .y(function(d) { return d.daily_total; })
+          .forceY([0,100])
           .color(d3.scale.category20().range())
           .useInteractiveGuideline(true)
           .clipVoronoi(false);
