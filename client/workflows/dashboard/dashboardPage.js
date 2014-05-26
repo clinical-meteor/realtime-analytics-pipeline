@@ -51,7 +51,12 @@ Template.dashboardPage.events({
       daily_total: $('#valueInput').val(),
       dateIncrement: date.format('YYYYMMDD')
     }
-    //alert(JSON.stringify(dataObject));
-    DailyStats.insert(dataObject);
+    if(dataObject.daily_total < 0){
+      alert('Value must be above 0 and below 100!');
+    }else if(dataObject.daily_total > 100){
+      alert('Value must be above 0 and below 100!');
+    }else{
+      DailyStats.insert(dataObject);
+    }
   }
 });

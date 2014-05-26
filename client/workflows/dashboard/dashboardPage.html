@@ -21,8 +21,8 @@
               Data Input
             </div>
             <div class="panel-body">
-              <input id="dateInput" type="text" class="form-control" placeholder="enter date..." value="{{getMostRecentDate}}">
-              <input id="valueInput" type="text" class="form-control" placeholder="enter value...">
+<!--               <input id="dateInput" type="text" class="form-control" placeholder="enter date..." value="{{getMostRecentDate}}"> -->
+              <input id="valueInput" type="text" class="form-control" placeholder="enter numer value (0 to 100)">
               <div id="dataSubmitButton" class="fullwidth btn btn-default">
                 Enter
               </div>
@@ -42,7 +42,7 @@
                 Behind the scenes, the Data Input box is connecting to the local client minimongo cursor, where it inputs some data.  The minimongo cursor synchronizes with the Mongo database instance.  When an update to the database occurs, Meteor contacts all the open clients and pushes the new data to the minimongo curors.  When the local minimongo cursor updates, the Blaze templates get redrawn.  And the D3 graphs get triggered to update their graphs.
               </p>
               <p>
-                The entire thing is pipelined, and any new data to the database will update the graphs.  
+                The entire thing is pipelined, and any new data to the database will update the graphs.  Meaning that these graphs will update when a Mongo REST API receives data.
               </p>
             </div>
           </div>
