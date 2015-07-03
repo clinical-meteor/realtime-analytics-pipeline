@@ -1,4 +1,4 @@
 
-Deps.autorun(function(){
+Tracker.autorun(function(){
   Meteor.subscribe('interactionsDaily');
 });

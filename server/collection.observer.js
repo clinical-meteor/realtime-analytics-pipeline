@@ -22,8 +22,6 @@ Meteor.startup(function(){
           //updateHourlyInteractions(id, record.campaign_id);
           //updateEngagementData(record.campaign_id, record);
           updateDailyInteractions(id, record);
-
-
       }
     },
     removed: function () {

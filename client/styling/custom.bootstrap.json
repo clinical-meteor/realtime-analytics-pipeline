@@ -1,0 +1,54 @@
+{
+  "modules" : {
+    "normalize"            : true,
+    "print"                : false,
+    "glyphicons"           : false,
+
+    "scaffolding"          : true,
+    "type"                 : false,
+    "code"                 : false,
+    "grid"                 : true,
+    "tables"               : false,
+    "forms"                : false,
+    "buttons"              : true,
+
+    "component-animations" : false,
+    "dropdowns"            : false,
+    "button-groups"        : true,
+    "input-groups"         : true,
+    "navs"                 : true,
+    "navbar"               : true,
+    "breadcrumbs"          : false,
+    "pagination"           : false,
+    "pager"                : false,
+    "labels"               : false,
+
+    "badges"               : false,
+    "jumbotron"            : false,
+    "thumbnails"           : false,
+    "alerts"               : false,
+    "progress-bars"        : false,
+    "media"                : false,
+    "list-group"           : true,
+    "panels"               : true,
+    "responsive-embed"     : false,
+    "wells"                : true,
+    "close"                : false,
+
+    "modals"               : true,
+    "tooltip"              : false,
+    "popovers"             : false,
+    "carousel"             : false,
+
+    "affix"                : false,
+    "alert"                : true,
+    "button"               : true,
+    "collapse"             : false,
+    "scrollspy"            : false,
+    "tab"                  : false,
+    "transition"           : false,
+
+    "utilities"            : false,
+    "responsive-utilities" : false
+  }
+}

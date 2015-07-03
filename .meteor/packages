@@ -3,11 +3,12 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-standard-app-packages
+meteor-platform
 insecure
 less
-bootstrap-3
-browser-policy
-moment
-iron-router
-d3
+nemo64:bootstrap
+awatson1978:fonts-helveticas
+fortawesome:fontawesome
+mrt:moment
+iron:router
+d3js:d3
