@@ -9,6 +9,10 @@ less
 nemo64:bootstrap
 awatson1978:fonts-helveticas
 fortawesome:fontawesome
-mrt:moment
+momentjs:moment
 iron:router
 d3js:d3
+nvd3:nvd3
+clinical:graphs-dailystats
+clinical:session-extended-api
+rahul:animate-everything

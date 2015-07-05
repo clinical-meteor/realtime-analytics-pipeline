@@ -13,7 +13,7 @@ Router.map(function(){
       Meteor.subscribe ('interactionsDaily');
     },
     onAfterAction: function() {
-      renderDailyInteractionsLineChart();
+      Graphs.renderDailyInteractionsDailyStats();
     }
   });
 });
@@ -21,8 +21,9 @@ Router.map(function(){
 //------------------------------------------------
 // HELPERS
 
+
 Template.dashboardPage.helpers({
-  getMostRecentDate:function(){
+  /*getMostRecentDate:function(){
     var record = DailyStats.find({},{sort:{dateIncrement: -1}}).fetch()[0];
 
     if(record){
@@ -32,18 +33,18 @@ Template.dashboardPage.helpers({
       return "";
     }
   },
-  resized: function() {
-    renderDailyInteractionsLineChart();
+  dailyStatsResized: function() {
+    Graphs.renderDailyInteractionsDailyStats();
     return Session.get('resize');
   },
   destroyed: function() {
     this.handle && this.handle.stop();
-    $('#dailyInteractionsLineChart').html('<svg id="dailyInteractionsLineChartCanvas"></svg>');
-  }
+    $('#dailyInteractionsDailyStats').html('<svg id="dailyInteractionsDailyStatsCanvas"></svg>');
+  }*/
 });
 
 Template.dashboardPage.events({
-  'click #dataSubmitButton':function(){
+  /*'click #dataSubmitButton':function(){
     var date = moment($('#dateInput').val(), "MM-DD-YYYY");
 
     var dataObject = {
@@ -58,5 +59,5 @@ Template.dashboardPage.events({
     }else{
       DailyStats.insert(dataObject);
     }
-  }
+  }*/
 });

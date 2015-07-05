@@ -1,5 +1,5 @@
-renderDailyInteractionsLineChart = function(){
-  console.log('renderDailyInteractionsLineChart');
+Graphs.renderDailyInteractionsDailyStats = function(){
+  console.log('Graphs.renderDailyInteractionsDailyStats');
 
   // var nullrecord = [
   //   {x:0, y:0}
@@ -27,12 +27,12 @@ renderDailyInteractionsLineChart = function(){
     var chart;
     nv.addGraph({
       generate: function(){
-        console.log('generating dailyInteractionsLineChart...');
+        console.log('generating dailyInteractionsDailyStats...');
 
-        var width = $('#dailyInteractionsLineChart').width();
+        var width = $('#dailyInteractionsDailyStats').width();
 
-        $('#dailyInteractionsLineChart').height($('#dailyInteractionsLineChartPanel').height() - 20);
-        var height = $('#dailyInteractionsLineChart').height();
+        $('#dailyInteractionsDailyStats').height($('#dailyInteractionsDailyStatsPanel').height() - 20);
+        var height = $('#dailyInteractionsDailyStats').height();
         if(height > 380){
           height = 380;
         }
@@ -54,7 +54,7 @@ renderDailyInteractionsLineChart = function(){
         chart.yAxis
           .tickFormat(d3.format(''));
 
-        d3.select('#dailyInteractionsLineChart svg')
+        d3.select('#dailyInteractionsDailyStats svg')
           .attr('width', width)
           .attr('height', height)
           .datum(data)
@@ -68,8 +68,8 @@ renderDailyInteractionsLineChart = function(){
       },
       callback: function(graph){
         window.onresize = function () {
-          var width = $('#dailyInteractionsLineChart').width();
-          var height =  $('#dailyInteractionsLineChart').height();
+          var width = $('#dailyInteractionsDailyStats').width();
+          var height =  $('#dailyInteractionsDailyStats').height();
           var margin = graph.margin();
 
           if (width < margin.left + margin.right + 20){
@@ -87,7 +87,7 @@ renderDailyInteractionsLineChart = function(){
 
           graph.width(width).height(height);
 
-          d3.select('#dailyInteractionsLineChart svg')
+          d3.select('#dailyInteractionsDailyStats svg')
             .attr('width', width)
             .attr('height', height)
             .call(graph);

@@ -1,0 +1,26 @@
+#infoPanel{
+  position: absolute;
+  z-index: 1000;
+  opacity: 1;
+  top: 200px;
+  margin-right: 15px;
+  -webkit-transition: opacity 200ms ease-in 200ms;
+  -moz-transition: opacity 200ms ease-in 200ms;
+  -o-transition: opacity 200ms ease-in 200ms;
+  transition:  opacity 300ms ease-in 200ms;
+}
+.isHidden{
+  opacity: 0 !important;
+}
+.overlay-mask{
+  position: fixed !important;
+  top: 0px !important;
+  background-color: #000;
+  opacity: .6;
+  filter: alpha(opacity=60);
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+
+  cursor: pointer;
+}
