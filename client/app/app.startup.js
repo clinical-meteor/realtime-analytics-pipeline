@@ -6,21 +6,21 @@ Meteor.startup(function(){
   });
 
   DailyStats.configure({
-    totalDataBucketConfig: {
+    dailyTotal: {
       color: "#45b76f",
-      label: "Total"
+      key: "Total"
     },
     bucketA: {
       color: "#E68A2E",
-      label: "Foo"
+      key: "Foo"
     },
     bucketB: {
       color: "#80B2FF",
-      label: "Bar"
+      key: "Bar"
     },
     bucketC: {
       color: "#DB4D4D",
-      label: "Squee"
+      key: "Squee"
     }
   });
 

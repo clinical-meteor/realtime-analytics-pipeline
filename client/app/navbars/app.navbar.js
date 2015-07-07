@@ -16,7 +16,8 @@ Template.navbarFooterNav.events({
     Session.toggle('isHidden');
   },
   'click #dataSubmitButton':function(){
-    StatsCounter.incrementTodayCount()
+    //StatsCounter.incrementTodayCount();
+    StatsCounter.incrementCount("dailyTotal");
   },
   'click #addBucketA':function(){
     StatsCounter.incrementCount("bucketA");
