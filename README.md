@@ -15,6 +15,15 @@ $ cd realtime-analytics-pipeline
 $ meteor
 ````
 
+==================================
+#### Get the Package  
+
+This is the original application repository that the ``clinical:graphs-dailystats`` package was refactored from.  It's being downgraded from a reference app to a sandbox app.  If you'd like to install the D3 line chart in other apps, run the following:
+
+````bash
+meteor add clinical:graphs-dailystats
+````
+
 
 ==================================
 #### Licensing  

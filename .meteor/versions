@@ -7,7 +7,7 @@ blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
 check@1.0.5
-clinical:graphs-dailystats@1.2.1
+clinical:graphs-dailystats@1.3.2
 clinical:session-extended-api@1.0.0
 d3js:d3@3.5.5
 ddp@1.1.0
