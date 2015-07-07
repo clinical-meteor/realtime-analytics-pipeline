@@ -2,6 +2,7 @@
 
 Real-time analytics pipeline, including statistics writer, pub/sub, and D3 multibar visualization of daily stats.  
 
+![Screenshot](https://raw.githubusercontent.com/awatson1978/realtime-analytics-pipeline/master/screenshot2.png)  
 
 ==================================
 #### Installation  
